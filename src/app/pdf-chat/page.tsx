@@ -55,7 +55,7 @@ export default function PDFChatPage() {
       localStorage.removeItem("chatHistory");
       localStorage.removeItem("annotations");
     }
-  }, []);
+  }, [fileUrl]);
 
   useEffect(() => {
     localStorage.setItem("fileUrl", fileUrl!);
