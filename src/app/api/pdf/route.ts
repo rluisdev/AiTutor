@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Prisma, PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import fs from "fs";
 import path from "path";
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       Buffer.from(await file.arrayBuffer())
     );
 
-    const pdfMetadata: Prisma.JsonObject = {
+    const pdfMetadata = {
       fileName,
       uploadedAt: new Date().toISOString(),
     };
